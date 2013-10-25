@@ -1,0 +1,55 @@
+﻿fa = FiniteAutomaton.new
+      rstate = []
+      group = []
+      result = []
+      index = 0
+      empty = eClosure(@start)
+      empty = empty.sort
+      rstate.push(empty)
+      n = fa.new_state
+      result.push(n)
+      
+      rstate.each{|r|
+        @alphabet.each{|alpha|
+          empty = []
+          group = move(r, alpha)
+          group.each{|elem| empty = empty.concat(eClosure(elem))}
+          group = empty
+          group = group.sort
+          state = true
+          
+          # check if the state is already in R
+          rstate.each{|elem| if elem == group then state = false end}
+          
+          # if not, add Move to R
+          if group.size != 0 && state
+            rstate.push(group)
+            n = fa.new_state
+            result.push(n)
+            fa.add_transition(result[index], n, alpha)
+            
+            if fa.get_alpha.include?(alpha) == false
+              fa.get_alpha.push(alpha)
+            end
+          elsif group.size != 0 && state == false && fa.get_transition(result[index], alpha) == nil
+            at = rstate.index(group)
+            fa.add_transition(result[index], result[at], alpha)
+          elsif group.size != 0 && fa.get_transition(result[index], alpha) == nil
+            fa.add_transition(result[index], result[index], alpha)
+          end
+        }
+        index = index + 1
+      }
+      
+      keys = @final.keys
+      final = []
+      index = 0
+      rstate.each{|r| 
+        keys.each{|k| if r.include?(k) then final.push(result[index]) end}
+        index = index + 1
+      }
+        
+      s0 = result[0]
+      fa.set_start(s0)
+      final.each{|f| fa.set_final(f, true)}
+      fa

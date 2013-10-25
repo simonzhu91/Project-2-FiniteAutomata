@@ -1,0 +1,12 @@
+% Start 8
+% Final { 10 }
+% States { 8 9 10 }
+% Alphabet { a }
+% Transitions {
+%  (8 a 9)
+%  (9 a 10)
+% }
+Reject 
+Reject a
+Accept aa
+Reject aaa

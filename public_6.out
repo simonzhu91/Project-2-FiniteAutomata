@@ -1,0 +1,10 @@
+% Start 6
+% Final { 6 8 }
+% States { 6 7 8 }
+% Alphabet { a }
+% Transitions {
+%  (6 a 7)
+%  (7 a 8)
+%  (8 a 7)
+% }
+"" "aa" "aaaa" "aaaaaa" "aaaaaaaa" "aaaaaaaaaa" 

@@ -1,0 +1,49 @@
+% Start 0
+% Final { 1 }
+% States { 0 1 }
+% Alphabet { a }
+% Transitions {
+%  (0 a 1)
+% }
+% Start 2
+% Final { 3 }
+% States { 2 3 }
+% Alphabet { b }
+% Transitions {
+%  (2 b 3)
+% }
+% Start 0
+% Final { 3 }
+% States { 0 1 2 3 }
+% Alphabet { a b }
+% Transitions {
+%  (0 a 1)
+%  (1  2)
+%  (2 b 3)
+% }
+4
+% Start 8
+% Final { 9 }
+% States { 4 5 6 7 8 9 }
+% Alphabet { c d }
+% Transitions {
+%  (4 c 5)
+%  (5  9)
+%  (6 d 7)
+%  (7  9)
+%  (8  4)
+%  (8  6)
+% }
+6
+% Start 12
+% Final { 13 }
+% States { 10 11 12 13 }
+% Alphabet { e }
+% Transitions {
+%  (10 e 11)
+%  (11  13)
+%  (12  10)
+%  (12  13)
+%  (13  12)
+% }
+4

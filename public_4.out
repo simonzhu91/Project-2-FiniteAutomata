@@ -1,0 +1,27 @@
+% Start 6
+% Final { 7 8 }
+% States { 6 7 8 }
+% Alphabet { a b }
+% Transitions {
+%  (6 a 7)
+%  (6 b 8)
+% }
+3
+% Start 13
+% Final { 15 }
+% States { 13 14 15 }
+% Alphabet { a }
+% Transitions {
+%  (13 a 14)
+%  (14 a 15)
+% }
+3
+% Start 20
+% Final { 20 21 }
+% States { 20 21 }
+% Alphabet { a }
+% Transitions {
+%  (20 a 21)
+%  (21 a 21)
+% }
+2

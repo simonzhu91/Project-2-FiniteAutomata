@@ -1,0 +1,12 @@
+a PRINT 
+b PRINT 
+. PRINT
+SIZE 
+c 
+d 
+| PRINT 
+SIZE 
+e
+* PRINT
+SIZE 
+DONE
